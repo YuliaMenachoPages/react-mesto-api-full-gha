@@ -1,6 +1,5 @@
 import React from "react";
 import {CurrentUserContext} from "../contexts/CurrentUserContext";
-import {logDOM} from "@testing-library/react";
 
 function Card(props) {
     const currentUser = React.useContext(CurrentUserContext);
