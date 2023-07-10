@@ -1,0 +1,11 @@
+.element {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    width: 282px;
+    height: 361px;
+    align-self: center;
+}

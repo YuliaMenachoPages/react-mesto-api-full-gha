@@ -1,0 +1,17 @@
+.login__link {
+    color: rgba(255, 255, 255, 1);
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.15;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    opacity: 1;
+}
+
+.login__link:hover {
+    color: rgba(255, 255, 255, 1);
+    background-color: transparent;
+    opacity: 0.6;
+}
+

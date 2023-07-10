@@ -1,0 +1,19 @@
+.element__icon {
+    background-image: url("../../../images/elements-like.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    border: none;
+    background-color: #FFFFFF;
+    min-width: 23px;
+    min-height: 20px;
+    margin: 0;
+    padding: 0;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
+
+.element__icon:hover {
+    opacity: 0.5;
+}

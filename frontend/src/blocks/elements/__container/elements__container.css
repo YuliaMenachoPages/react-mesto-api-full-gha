@@ -1,0 +1,13 @@
+.elements__container {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, 282px);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    list-style: none;
+}
+

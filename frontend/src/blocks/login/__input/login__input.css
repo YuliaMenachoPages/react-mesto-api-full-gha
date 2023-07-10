@@ -1,0 +1,21 @@
+.login__input {
+    border: none;
+    color: rgba(204, 204, 204, 1);
+    border-bottom: 1px solid rgba(204, 204, 204, 1);
+    background-color: black;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    padding-bottom: 9px;
+    margin: 0 0 30px 0;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.login__input:focus {
+    outline: 3px solid #34a0f8;
+    border-radius: 2px;
+}
