@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.6.84
+IP 51.250.6.84
 
 Frontend https://mestovmeste.nomoredomains.work
 
