@@ -1,4 +1,4 @@
-const serverUrl = 'http://localhost:3000';
+const serverUrl = 'http://mesto.vmeste.nomoredomains.work';
  class Api {
     constructor({initialUrl}) {
         this.initialUrl = initialUrl;
@@ -22,7 +22,7 @@ const serverUrl = 'http://localhost:3000';
             .then(res => this._getResponseData(res));
     }
 
-    addCard(cardData, headers) {
+    addCard(cardData) {
         return fetch(`${this.initialUrl}/cards`, {
             method: 'POST',
             headers: {
@@ -37,7 +37,7 @@ const serverUrl = 'http://localhost:3000';
             .then(res => this._getResponseData(res));
     }
 
-    addLike(cardId, headers) {
+    addLike(cardId) {
         return fetch(`${this.initialUrl}/cards/${cardId}/likes`, {
             method: 'PUT',
             headers: {
@@ -66,7 +66,7 @@ const serverUrl = 'http://localhost:3000';
         return this.deleteLike(cardId);
     }
 
-    deleteCard(cardId, headers) {
+    deleteCard(cardId) {
         return fetch(`${this.initialUrl}/cards/${cardId}`, {
             method: 'DELETE',
             headers: {
@@ -90,7 +90,7 @@ const serverUrl = 'http://localhost:3000';
             .then(res => this._getResponseData(res))
     }
 
-    changeUserData({fullname, about}, headers) {
+    changeUserData({fullname, about}) {
         return fetch(`${this.initialUrl}/users/me`, {
             method: 'PATCH',
             headers: {
@@ -105,7 +105,7 @@ const serverUrl = 'http://localhost:3000';
             .then(res => this._getResponseData(res))
     }
 
-    changeUserAvatar({link}, headers) {
+    changeUserAvatar({link}) {
         return fetch(`${this.initialUrl}/users/me/avatar`, {
             method: 'PATCH',
             headers: {

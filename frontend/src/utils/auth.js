@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'http://mesto.vmeste.nomoredomains.work';
 
 function getResponseData (res)  {
     if (!res.ok) {
