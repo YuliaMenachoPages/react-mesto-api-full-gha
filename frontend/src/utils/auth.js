@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://mesto.vmeste.nomoredomains.work';
+export const BASE_URL = 'https://mesto.vmeste.nomoredomains.work';
 
 function getResponseData (res)  {
     if (!res.ok) {

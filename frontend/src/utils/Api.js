@@ -1,4 +1,4 @@
-const serverUrl = 'http://mesto.vmeste.nomoredomains.work';
+const serverUrl = 'https://mesto.vmeste.nomoredomains.work';
  class Api {
     constructor({initialUrl}) {
         this.initialUrl = initialUrl;
