@@ -152,11 +152,19 @@ function App() {
                                                              onCardDelete={handleCardDelete}
                                                              loggedIn={loggedIn}/>}/>
                 <Route
-                    path="/signin" element={<Login handleLogin={handleLogin}/>}/>
+                    path="/signin" element={<Login
+                    handleLogin={handleLogin}
+                    setEmail={setEmail}
+                    setIsInfoToolTipOpen={setIsInfoToolTipOpen}
+                    setInfoToolTipStatus={setInfoToolTipStatus}
+                    infoToolTipStatus={infoToolTipStatus}
+                />}/>
                 <Route
                     path="/signup" element={<Register
                     setIsInfoToolTipOpen={setIsInfoToolTipOpen}
-                    setInfoToolTipStatus={setInfoToolTipStatus}/>}/>
+                    setInfoToolTipStatus={setInfoToolTipStatus}
+                    infoToolTipStatus={infoToolTipStatus}
+                />}/>
                 <Route path='*' element={loggedIn ? <Navigate to='/'/> : <Navigate to='/signin'/>}/>
             </Routes>
             <EditAvatarPopup
@@ -182,8 +190,6 @@ function App() {
                 isOpen={isInfoToolTipOpen}
                 onClose={closeAllPopups}
                 name='infoToolTip'
-                // img='../images/ok.svg'
-                // title='Вы успешно зарегистрировались!'
                 infoToolTipStatus={infoToolTipStatus}
             />
         </CurrentUserContext.Provider>

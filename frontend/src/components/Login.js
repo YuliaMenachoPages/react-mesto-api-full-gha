@@ -5,6 +5,8 @@ import AuthPage from "./AuthPage";
 
 
 const Login = (props) => {
+    // const [openToolTip, setOpenToolTip] = useState(false)
+
     const [formValue, setFormValue] = useState({
         email: '',
         password: ''
@@ -13,7 +15,6 @@ const Login = (props) => {
 
     const handleChange = (e) => {
         const {name, value} = e.target;
-
         setFormValue({
             ...formValue,
             [name]: value
@@ -28,12 +29,17 @@ const Login = (props) => {
             .then((data) => {
                 if (data) {
                     setFormValue({email: '', password: ''});
+                    props.setEmail(formValue.email)
                     props.handleLogin();
                     navigate('/', {replace: true});
                 }
             })
-            .catch(err => console.log(err));
-    }
+            .catch(() => {
+                    props.setInfoToolTipStatus('reject');
+                props.setIsInfoToolTipOpen(true);
+                }
+            )
+           }
     return (
         <AuthPage
             headerText='Вход'

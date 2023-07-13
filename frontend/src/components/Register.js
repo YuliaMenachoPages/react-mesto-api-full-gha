@@ -21,13 +21,15 @@ const Register = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         auth.register(formValue.email, formValue.password)
-            .then((res) => {
+            .then(() => {
                 navigate('/signin', {replace: true});
                 props.setInfoToolTipStatus('ok');
             })
             .catch(() =>
                 props.setInfoToolTipStatus('reject'))
-            .finally(() => props.setIsInfoToolTipOpen(true));
+            .finally(() => {
+                props.setIsInfoToolTipOpen(true)
+            });
     }
 
     return (

@@ -15,7 +15,7 @@ const { createUser, login } = require('./controllers/users');
 const { loginValidation, userValidation } = require('./middlewares/validationJoi');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-const { PORT = 3000 } = process.env;
+const { PORT = 3000, DB_URL = 'mongodb://127.0.0.1:27017/mestodb' } = process.env;
 
 const limiter = rateLimit({
   windowMs: 10 * 60 * 1000,
@@ -34,10 +34,7 @@ app.use(cors({
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(limiter);
-mongoose.connect('mongodb://127.0.0.1:27017/mestodb', {
-  useNewUrlParser: true,
-});
+
 app.get('/crash-test', () => {
   setTimeout(() => {
     throw new Error('Сервер сейчас упадёт');
@@ -45,6 +42,10 @@ app.get('/crash-test', () => {
 });
 
 app.use(requestLogger);
+app.use(limiter);
+mongoose.connect(DB_URL, {
+  useNewUrlParser: true,
+});
 app.post('/signin', loginValidation, login);
 app.post('/signup', userValidation, createUser);
 
@@ -60,4 +61,6 @@ app.use('*', (req, res, next) => {
 app.use(errorLogger);
 app.use(errors());
 app.use(handleError);
-app.listen(PORT);
+app.listen(PORT, () => {
+  console.log(`server is running on port ${PORT}`);
+});
