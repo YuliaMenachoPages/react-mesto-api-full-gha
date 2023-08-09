@@ -7,10 +7,4 @@
 
 Адрес репозитория: https://github.com/YuliaMenachoPages/react-mesto-api-full-gha
 
-## Ссылки на проект
 
-IP 51.250.6.84
-
-Frontend https://mestovmeste.nomoredomains.work
-
-Backend https://mesto.vmeste.nomoredomains.work
